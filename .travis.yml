@@ -1,0 +1,11 @@
+language: ruby
+script:
+  - bundle exec rspec
+  - bundle exec rubocop
+rvm:
+  - 2.0
+  - 2.4
+  - rbx-2
+  - jruby
+  - ruby-head
+  - jruby-head

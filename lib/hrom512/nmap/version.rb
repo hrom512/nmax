@@ -1,0 +1,5 @@
+module Hrom512
+  module Nmap
+    VERSION = '0.1.0'.freeze
+  end
+end

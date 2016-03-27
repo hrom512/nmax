@@ -1,5 +1,7 @@
 # nmax
 
+[![Build Status](https://travis-ci.org/hrom512/nmax.svg?branch=master)](https://travis-ci.org/hrom512/nmax)
+
 Search N maximum elements in the input stream.
 
 ## Installation

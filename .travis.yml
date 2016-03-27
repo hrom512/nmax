@@ -4,7 +4,8 @@ script:
   - bundle exec rubocop
 rvm:
   - 2.0
-  - 2.4
+  - 2.1
+  - 2.2
   - rbx-2
   - jruby
   - ruby-head

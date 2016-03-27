@@ -1,10 +1,10 @@
 module FilesHelper
-  # call nmap script in shell
-  def call_nmap(nmap_args = '', params = {})
+  # call nmax script in shell
+  def call_nmax(nmax_args = '', params = {})
     if params[:input_file]
-      `cat #{params[:input_file]} | nmap #{nmap_args}`
+      `cat #{params[:input_file]} | nmax #{nmax_args}`
     else
-      `nmap #{nmap_args}`
+      `nmax #{nmax_args}`
     end
   end
 

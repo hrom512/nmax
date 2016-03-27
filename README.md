@@ -1,10 +1,10 @@
-# Hrom512::Nmap
+# nmax
 
 Search N maximum elements in the input stream.
 
 ## Installation
 
-    $ gem install hrom512-nmap
+    $ gem install hrom512-nmax
 
 ## Usage
 

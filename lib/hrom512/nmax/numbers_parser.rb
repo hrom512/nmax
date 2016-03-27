@@ -1,5 +1,5 @@
 module Hrom512
-  module Nmap
+  module Nmax
     # Parse numbers from input stream
     class NumbersParser
       BLOCK_SIZE = 100_000

@@ -1,7 +1,7 @@
 require 'spec_helper'
 require 'stringio'
 
-describe Hrom512::Nmap::NumbersParser do
+describe Hrom512::Nmax::NumbersParser do
   let(:input_data) { '1 test -22 test333test 04444.55555' }
   let(:input_stream) { StringIO.new(input_data) }
   let(:parser) { described_class.new(input_stream) }

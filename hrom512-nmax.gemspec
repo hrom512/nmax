@@ -1,11 +1,11 @@
 # coding: utf-8
 lib = File.expand_path('../lib', __FILE__)
 $LOAD_PATH.unshift(lib) unless $LOAD_PATH.include?(lib)
-require 'hrom512/nmap/version'
+require 'hrom512/nmax/version'
 
 Gem::Specification.new do |spec|
-  spec.name          = 'hrom512-nmap'
-  spec.version       = Hrom512::Nmap::VERSION
+  spec.name          = 'hrom512-nmax'
+  spec.version       = Hrom512::Nmax::VERSION
   spec.authors       = ['Khrebtov Roman']
   spec.email         = ['roman@alltmb.ru']
 

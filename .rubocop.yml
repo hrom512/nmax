@@ -1,0 +1,12 @@
+AllCops:
+  Exclude:
+    - 'bin/*'
+  DisplayCopNames: true
+  DisplayStyleGuide: true
+
+Metrics/LineLength:
+  Max: 120
+
+Style/Documentation:
+  Exclude:
+    - 'spec/**/*'

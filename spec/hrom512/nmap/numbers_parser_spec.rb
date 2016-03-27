@@ -11,8 +11,8 @@ describe Hrom512::Nmap::NumbersParser do
       expect(parser.next_number).to eq(1)
       expect(parser.next_number).to eq(22)
       expect(parser.next_number).to eq(333)
-      expect(parser.next_number).to eq(4444)
-      expect(parser.next_number).to eq(55555)
+      expect(parser.next_number).to eq(4_444)
+      expect(parser.next_number).to eq(55_555)
       expect(parser.next_number).to be_nil
     end
   end

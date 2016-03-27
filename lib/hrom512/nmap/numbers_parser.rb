@@ -53,6 +53,7 @@ module Hrom512
         numbers = data.scan(/\d{1,1000}/m).map(&:to_i)
 
         # extract last number if data ends with digit
+        # rubocop:disable Style/IfUnlessModifier
         if !@is_last_block && data[-1] =~ /\d/
           @prev_tail = numbers.pop
         end

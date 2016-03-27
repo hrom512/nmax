@@ -1,0 +1,24 @@
+#!/usr/bin/env ruby
+
+require 'bundler/setup'
+require 'hrom512/nmax'
+
+USAGE = 'Usage: cat FILE | nmax NUMBERS_COUNT'
+
+unless ARGV.size == 1
+  puts USAGE
+  exit
+end
+
+numbers_count = ARGV.first.to_i
+unless numbers_count > 0
+  puts USAGE
+  exit
+end
+
+numbers_finder = Hrom512::Nmax::MaxNumbersFinder.new($stdin, numbers_count)
+max_numbers = numbers_finder.find
+
+max_numbers.each do |number|
+  puts number
+end

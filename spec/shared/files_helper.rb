@@ -2,9 +2,9 @@ module FilesHelper
   # call nmax script in shell
   def call_nmax(nmax_args = '', params = {})
     if params[:input_file]
-      `cat #{params[:input_file]} | nmax #{nmax_args}`
+      `cat #{params[:input_file]} | bin/nmax #{nmax_args}`
     else
-      `nmax #{nmax_args}`
+      `bin/nmax #{nmax_args}`
     end
   end
 

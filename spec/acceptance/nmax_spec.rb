@@ -1,34 +1,30 @@
 require 'spec_helper'
 
 describe 'nmax', type: :acceptance do
-  before { skip }
+  let(:usage) { "Usage: cat FILE | nmax NUMBERS_COUNT\n" }
 
   context 'without args' do
     subject { call_nmax }
 
-    it { is_expected.to eq('Param is required') }
+    it { is_expected.to eq(usage) }
   end
 
   context 'with two args' do
     subject { call_nmax('10 20') }
 
-    it { is_expected.to eq('Error parameters count') }
+    it { is_expected.to eq(usage) }
   end
 
-  context 'with one arg' do
-    subject { call_nmax('10') }
+  context 'with one arg and input stream' do
+    let(:file) { generate_file('data_100MB.txt', 100, numbers) }
+    let(:numbers) { (1..10_000).to_a }
+    let(:nmax_param) { 100 }
+    let(:max_numbers) { (9901..10_000).to_a.reverse }
 
-    it { is_expected.to be_blank }
+    subject { call_nmax(nmax_param, input_file: file) }
 
-    context 'with input stream' do
-      let(:file) { generate_file('data_1GB.txt', 1024, numbers) }
-      let(:numbers) { (1..100_000).to_a }
-      let(:nmax_param) { 10_000 }
-      let(:max_numbers) { numbers.reverse[0..nmax_param - 1] }
-
-      subject { call_nmax(nmax_param, input_file: file) }
-
-      it { is_expected.to eq(max_numbers.join("\n")) }
+    it 'return max numbers' do
+      is_expected.to eq("#{max_numbers.join("\n")}\n")
     end
   end
 end

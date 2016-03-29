@@ -14,8 +14,6 @@ module Hrom512
         numbers = []
 
         while (number = numbers_parser.next_number)
-          next if numbers.include?(number)
-
           numbers << number
           numbers = max_elements(numbers) if numbers.size > MAX_STORE_ELEMENTS
         end
@@ -26,7 +24,7 @@ module Hrom512
       private
 
       def max_elements(numbers)
-        numbers.sort.reverse[0..(@numbers_count - 1)]
+        numbers.uniq.sort.reverse[0..(@numbers_count - 1)]
       end
     end
   end
